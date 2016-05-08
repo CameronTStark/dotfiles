@@ -27,7 +27,7 @@ Plug 'tpope/vim-sensible' " vim settings everyone can agree on
 Plug 'nvie/vim-flake8' " check PEP8 compliance
 Plug 'vim-scripts/indentpython.vim' " enable proper indenting with python
 Plug 'gotcha/vimpdb' " enable python debugging in vim
-dasdfafa Plug 'klen/python-mode' " enable python specific functionality
+Plug 'klen/python-mode' " enable python specific functionality
 Plug 'ivanov/vim-ipython' " iPython interactivity
 Plug 'tmhedberg/SimpylFold' " enable folding of code based on indents
 " JAVASCRIPT
