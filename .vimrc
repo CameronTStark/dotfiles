@@ -52,13 +52,14 @@ autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
 " Color Scheme
-" syntax enable
+syntax enable
 set background=dark
 " solarized options
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
+" let g:solarized_termcolors=256
 colorscheme solarized
-syntax on
+"syntax on
 
 " Enable folding
 set foldmethod=indent

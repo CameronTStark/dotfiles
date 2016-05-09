@@ -57,17 +57,23 @@ export MONO_GAC_PREFIX="/usr/local"
 set editing-mode vi
 
 # Add directory to PYTHONPATH
-export PYTHONPATH=$PYTHONPATH:/Users/cstark/git/cse_pv_tools
-export PYTHONPATH=$PYTHONPATH:/Users/cstark/git/pvlib-python
+export PYTHONPATH=$PYTHONPATH:$HOME/git/cse_pv_tools
+export PYTHONPATH=$PYTHONPATH:$HOME/git/pvlib-python
 
 
 # enable powerline
- powerline-daemon -q
- POWERLINE_BASH_CONTINUATION=1
- POWERLINE_BASH_SELECT=1
-#. /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-. /usr/local/bin/powerline/bindings/bash/powerline.sh
+ # powerline-daemon -q
+ # POWERLINE_BASH_CONTINUATION=1
+ # POWERLINE_BASH_SELECT=1
+# . /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+#. /usr/local/bin/powerline/bindings/bash/powerline.sh
+function _update_ps1() {
+    PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+}
 
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
 
 # startup virtualenv-burrito
 if [ -f $HOME/.venvburrito/startup.sh ]; then
@@ -77,3 +83,10 @@ fi
 # autocompletion ignore case suggestion from MMulligan
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
+
+## Tell ls to be colourful
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+# Tell grep to highlight matches
+export GREP_OPTIONS='--color=auto' colorize ls by default
+export CLICOLOR=1
