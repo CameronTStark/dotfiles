@@ -1,0 +1,6 @@
+#!/bin/bash
+brew install \
+powerline \
+python3
+python2
+virtualenv

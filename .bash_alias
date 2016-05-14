@@ -1,0 +1,85 @@
+#STARTUP SEQUENCE
+clear
+echo -e "Welcome to cstark_mbp's Terminal"
+echo -e ""
+echo -ne "Today is "; date
+echo -e ""; cal ;
+echo -ne "Uptime: ";uptime | awk /'up/ {print $3,$4 " users"}'
+#STARTUP SEQUENCE-END
+
+#ALIASES
+alias up="cd .."
+alias home="cd ~"
+alias emptytrash="rm -fr ~/.Trash"
+alias topten="history | awk '{print \$2}' | awk 'BEGIN {FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail | sort -nr"
+alias la="ls -lah"
+alias handbrake="/Applications/CLI/HandBrakeCLI $"
+alias plexpub="/Volumes/Public/"
+alias extip="curl http://icanhazip.com/s"
+alias aedit="vim ~/.bash_alias"
+alias sunphoto="screen /dev/cu.usbserial-AE01AN5K 19200"
+alias mntshared="mkdir /Volumes/Shared; mount_smbfs //172.17.2.3/Shared /Volumes/Shared"
+alias mntdata="mkdir /Volumes/Data; mount_smbfs //172.17.2.3/Data /Volumes/Data"
+
+eval "$(hub alias -s)"
+#ALIASES-END
+
+#ABQ-VPN CONNECT
+function avpn-connect {
+/usr/bin/env osascript <<-EOF
+tell application "System Events"
+        tell current location of network preferences
+                set VPN to service "AbqVPN(PPTP)"
+                if exists VPN then connect VPN
+                repeat while (current configuration of VPN is not connected)
+                    delay 1
+                end repeat
+        end tell
+end tell
+EOF
+}
+#ABQ-VPN CONNECT-END
+
+#ABQ-VPN DISCONNECT
+function avpn-disconnect {
+/usr/bin/env osascript <<-EOF
+tell application "System Events"
+        tell current location of network preferences
+                set VPN to service "AbqVPN(PPTP)"
+                if exists VPN then disconnect VPN
+        end tell
+end tell
+return
+EOF
+}
+#ABQ-VPN DISCONNECT-END
+#Boston-VPN CONNECT
+function bvpn-connect {
+/usr/bin/env osascript <<-EOF
+tell application "System Events"
+        tell current location of network preferences
+                set VPN to service "BostonVPN(PPTP)"
+                if exists VPN then connect VPN
+                repeat while (current configuration of VPN is not connected)
+                    delay 1
+                end repeat
+        end tell
+end tell
+EOF
+}
+#Boston-VPN CONNECT-END
+
+#Boston-VPN DISCONNECT
+function bvpn-disconnect {
+/usr/bin/env osascript <<-EOF
+tell application "System Events"
+        tell current location of network preferences
+                set VPN to service "BostonVPN(PPTP)" 
+                if exists VPN then disconnect VPN
+        end tell
+end tell
+return
+EOF
+}
+#Boston-VPN DISCONNECT-END
+

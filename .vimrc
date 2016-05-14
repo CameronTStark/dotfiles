@@ -27,8 +27,7 @@ Plug 'tpope/vim-sensible' " vim settings everyone can agree on
 Plug 'nvie/vim-flake8' " check PEP8 compliance
 Plug 'vim-scripts/indentpython.vim' " enable proper indenting with python
 Plug 'gotcha/vimpdb' " enable python debugging in vim
-Plug 'klen/python-mode' " enable python specific functionality
-Plug 'ivanov/vim-ipython' " iPython interactivity
+"Plug 'ivanov/vim-ipython' " iPython interactivity
 Plug 'tmhedberg/SimpylFold' " enable folding of code based on indents
 " JAVASCRIPT
 Plug 'pangloss/vim-javascript' "JavaScript bundle for vim, this bundle provides syntax and indent plugins
@@ -122,3 +121,10 @@ let g:airline_powerline_fonts = 1
 
 " configure bufferline
 "let g:bufferline_echo = 1
+"
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" NerdTree Configuration
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
