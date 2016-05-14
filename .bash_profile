@@ -19,9 +19,6 @@ fi
 # sourced to enable virtual environment up cd into directory
 source /usr/local/opt/autoenv/activate.sh
 
-# added by Anaconda 2.2.0 installer
-#export PATH="/Users/cstark/anaconda/bin:$PATH"
-
 #todo.txt specific items
 export TODOTXT_DEFAULT_ACTION=ls
 alias t='todo.sh -d /Users/cstark/.todo/config'
@@ -55,6 +52,7 @@ export MONO_GAC_PREFIX="/usr/local"
 
 # Use vi editing mode
 set editing-mode vi
+# set -o vi
 
 # Add directory to PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:$HOME/git/cse_pv_tools
