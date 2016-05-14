@@ -69,7 +69,7 @@ export PYTHONPATH=$PYTHONPATH:$HOME/git/pvlib-python
 #. /usr/local/bin/powerline/bindings/bash/powerline.sh
 
 function _update_ps1() {
-    PS1="$(~/dotfiles/powerline-shell.py $? 2> /dev/null)"
+    PS1=“$(~/git/dotfiles/powerline-shell.py $? 2> /dev/null)"
 }
 
 if [ "$TERM" != "linux" ]; then
