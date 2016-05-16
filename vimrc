@@ -7,7 +7,7 @@ Plug 'jnurmine/Zenburn' " colorscheme
 Plug 'altercation/vim-colors-solarized' " colorscheme
 Plug 'vim-airline/vim-airline' " light powerline
 Plug 'vim-airline/vim-airline-themes' " themese for light powerline
-"Plug 'bling/vim-bufferline' " show list of buffers in command bar
+Plug 'bling/vim-bufferline' " show list of buffers in command bar
 "Interfaces
 Plug 'ctrlpvim/ctrlp.vim' " Ctrl+P search files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " file tree navigation
@@ -77,14 +77,14 @@ filetype plugin indent on
 filetype plugin on
 
 " PYTHON
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+  "project_base_dir = os.environ['VIRTUAL_ENV']
+  "activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  "execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 set encoding=utf-8 " Enable UTF-8 for python
 
