@@ -1,10 +1,10 @@
 #STARTUP SEQUENCE
 clear
-echo -e "Welcome to cstark_mbp's Terminal"
+echo -e "Welcome to "$HOSTNAME"'s Terminal"
 echo -e ""
 echo -ne "Today is "; date
-echo -e ""; cal ;
-echo -ne "Uptime: ";uptime | awk /'up/ {print $3,$4 " users"}'
+echo -e ""; cal | grep -E --color "(\b$(date +%d)\b|$)";
+echo -ne "Uptime: ";uptime
 #STARTUP SEQUENCE-END
 
 #ALIASES
@@ -20,6 +20,8 @@ alias aedit="vim ~/.bash_alias"
 alias sunphoto="screen /dev/cu.usbserial-AE01AN5K 19200"
 alias mntshared="mkdir /Volumes/Shared; mount_smbfs //172.17.2.3/Shared /Volumes/Shared"
 alias mntdata="mkdir /Volumes/Data; mount_smbfs //172.17.2.3/Data /Volumes/Data"
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+alias reload=". ~/.bash_profile"
 
 eval "$(hub alias -s)"
 #ALIASES-END
@@ -74,7 +76,7 @@ function bvpn-disconnect {
 /usr/bin/env osascript <<-EOF
 tell application "System Events"
         tell current location of network preferences
-                set VPN to service "BostonVPN(PPTP)" 
+                set VPN to service "BostonVPN(PPTP)"
                 if exists VPN then disconnect VPN
         end tell
 end tell

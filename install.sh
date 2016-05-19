@@ -1,25 +1,27 @@
 #!/bin/bash
-
+# BASEDIR will be the directory where this file is located
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # bash
-ln -s ${BASEDIR}/bash/bashrc ~/.bashrc
-ln -s ${BASEDIR}/bash/bash_profile ~/.bash_profile
-ln -s ${BASEDIR}/bash/bash_alias ~/.bash_alias
+ln -sfv ${BASEDIR}/bash/bashrc ~/.bashrc
+ln -sfv ${BASEDIR}/bash/bash_profile ~/.bash_profile
+ln -sfv ${BASEDIR}/bash/bash_alias ~/.bash_alias
 
 # vim
-ln -s ${BASEDIR}/vimrc ~/.vimrc
-# ln -s ${BASEDIR}/vim/ ~/.vim
+ln -sfv ${BASEDIR}/vimrc ~/.vimrc
+# ln -sfv ${BASEDIR}/vim/ ~/.vim
 
 # tmux
-ln -s ${BASEDIR}/tmux.conf ~/.tmux.conf
+ln -sfv ${BASEDIR}/tmux.conf ~/.tmux.conf
 
 # vimperator
-ln -s ${BASEDIR}/vimperatorrc ~/.vimperatorrc
+ln -sfv ${BASEDIR}/vimperatorrc ~/.vimperatorrc
 
+#todo
+ln -sfv ${BASEDIR}/todo ~/.todo
 
 # zsh
-# ln -s ${BASEDIR}/zshrc ~/.zshrc
+# ln -sfv ${BASEDIR}/zshrc ~/.zshrc
 
 # git
-# ln -s ${BASEDIR}/gitconfig ~/.gitconfig
+ln -sfv ${BASEDIR}/git/.gitconfig ~

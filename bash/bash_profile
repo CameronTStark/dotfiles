@@ -1,28 +1,16 @@
 # Setting PATH for Python 3.4 # The orginal version is saved in .bash_profile.pysave #PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}" #export PATH alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-export PATH=/usr/local/bin:$PATH
-
+export PATH=/usr/local/bin:$HOME/git:$PATH
 #set aliases
 source ~/.bash_alias
 
-# The following path was created to setup MySQLdb for Python
-#export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
-
-# This command is to enable grc
-#source "`brew --prefix`/etc/grc.bashrc"
-
-# manually entered to enable brew command tab-completion
-# source `brew --repository`/Library/Contributions/brew_bash_completion.sh
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-      . $(brew --prefix)/etc/bash_completion
-fi
 # sourced to enable virtual environment up cd into directory
 source /usr/local/opt/autoenv/activate.sh
 
 #todo.txt specific items
 export TODOTXT_DEFAULT_ACTION=ls
-alias t='todo.sh -d /Users/cstark/.todo/config'
-source /Users/cstark/.todo/todo_completion
+alias t='todo.sh -d $HOME/.todo/config'
+source ~/git/dotfiles/todo.txt-cli/todo_completion
 complete -F _todo t
 
 function prompt
@@ -55,17 +43,9 @@ set editing-mode vi
 # set -o vi
 
 # Add directory to PYTHONPATH
-export PYTHONPATH=$PYTHONPATH:$HOME/git/cse_pv_tools
-export PYTHONPATH=$PYTHONPATH:$HOME/git/pvlib-python
-
+export PYTHONPATH=$PYTHONPATH:$HOME/git/
 
 # enable powerline
- # powerline-daemon -q
- # POWERLINE_BASH_CONTINUATION=1
- # POWERLINE_BASH_SELECT=1
-# . /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-#. /usr/local/bin/powerline/bindings/bash/powerline.sh
-
 function _update_ps1() {
     PS1="$(~/git/dotfiles/powerline-shell.py $? 2> /dev/null)"
 }
@@ -92,3 +72,24 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 # Tell grep to highlight matches
 export GREP_OPTIONS='--color=auto' colorize ls by default
 export CLICOLOR=1
+
+# source bashrc if in Linux
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
+# for OSX specific
+if [ "$(uname -s)" = "Darwin" ]; then
+    # This command is to enable grc
+    #source "`brew --prefix`/etc/grc.bashrc"
+
+    # manually entered to enable brew command tab-completion
+    # source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+          . $(brew --prefix)/etc/bash_completion
+    fi
+fi
+
+
+# set defaults
+export EDITOR=vim

@@ -72,6 +72,8 @@ set clipboard=unnamed " enable system clipboard
 set splitbelow " frame horizontal split below
 set splitright " frame vertical split right
 
+set ts=4
+
 " look in .vim/after/ directory for config files
 filetype plugin indent on
 filetype plugin on
