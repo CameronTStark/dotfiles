@@ -1,0 +1,20 @@
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[user]
+	name = Cameron Stark
+	email = cstark@cse.fraunhofer.org
+[credential]
+	helper = osxkeychain
+[color]
+	ui = true
+[colors]
+	ui = true
+[push]
+	default = simple
+[http]
+	sslVerify = false
+[core]
+	editor = vim
+	excludesfile = ~/git/dotfiles/git/gitignore
