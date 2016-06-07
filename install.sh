@@ -1,27 +1,28 @@
 #!/bin/bash
-# BASEDIR will be the directory where this file is located
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# DOTFILESDIR will be the directory where this file is located
+DOTFILESDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+echo "export DOTFILESDIR=${DOTFILESDIR}" > $HOME/.bash_basedir
 # bash
-ln -sfv ${BASEDIR}/bash/bashrc ~/.bashrc
-ln -sfv ${BASEDIR}/bash/bash_profile ~/.bash_profile
-ln -sfv ${BASEDIR}/bash/bash_alias ~/.bash_alias
+ln -sfv ${DOTFILESDIR}/bash/bash_profile ~/.bash_profile
+#ln -sfv ${DOTFILESDIR}/bash/bashrc ~/.bashrc
+#ln -sfv ${DOTFILESDIR}/bash/bash_alias ~/.bash_alias
 
 # vim
-ln -sfv ${BASEDIR}/vimrc ~/.vimrc
-# ln -sfv ${BASEDIR}/vim/ ~/.vim
+ln -sfv ${DOTFILESDIR}/vimrc ~/.vimrc
+# ln -sfv ${DOTFILESDIR}/vim/ ~/.vim
 
 # tmux
-ln -sfv ${BASEDIR}/tmux.conf ~/.tmux.conf
+ln -sfv ${DOTFILESDIR}/tmux.conf ~/.tmux.conf
 
 # vimperator
-ln -sfv ${BASEDIR}/vimperatorrc ~/.vimperatorrc
+ln -sfv ${DOTFILESDIR}/vimperatorrc ~/.vimperatorrc
 
 #todo
-ln -sfv ${BASEDIR}/todo ~/.todo
+ln -sfv ${DOTFILESDIR}/todo ~/.todo
 
 # zsh
-# ln -sfv ${BASEDIR}/zshrc ~/.zshrc
+# ln -sfv ${DOTFILESDIR}/zshrc ~/.zshrc
 
 # git
-ln -sfv ${BASEDIR}/git/.gitconfig ~
+ln -sfv ${DOTFILESDIR}/git/.gitconfig ~

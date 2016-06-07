@@ -1,17 +1,19 @@
-# Setting PATH for Python 3.4 # The orginal version is saved in .bash_profile.pysave #PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}" #export PATH alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-export PATH=/usr/local/bin:$HOME/git:$PATH
-#set aliases
-source ~/.bash_alias
+export PATH=$PATH:/usr/local/bin:$HOME/git
+# source files
+source $HOME/.bash_basedir
+BASHDOTDIR=$DOTFILESDIR/bash
+
+source $BASHDOTDIR/bash_startup
+source $BASHDOTDIR/bash_alias
+source $BASHDOTDIR/bash_functions
+
+# source bashrc if in Linux
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
 
 # sourced to enable virtual environment up cd into directory
 source /usr/local/opt/autoenv/activate.sh
-
-#todo.txt specific items
-export TODOTXT_DEFAULT_ACTION=ls
-alias t='todo.sh -d $HOME/.todo/config'
-source ~/git/dotfiles/todo.txt-cli/todo_completion
-complete -F _todo t
 
 function prompt
 {
@@ -30,66 +32,62 @@ ${GREEN}\u${CYAN}@${GRAY}\h ${CYAN}\w${WHITE}
 $ "
 }
 prompt
-#for bash-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion ;
-fi
 
+#todo.txt specific items
+export TODOTXT_DEFAULT_ACTION=ls
+alias t='todo.sh -d $HOME/.todo/config'
+source ~/git/dotfiles/todo.txt-cli/todo_completion
+complete -F _todo t
 #To use the mono assemblies from other formulae you need to set:
 export MONO_GAC_PREFIX="/usr/local"
 
-# Use vi editing mode
-set editing-mode vi
-# set -o vi
-
-# Add directory to PYTHONPATH
-export PYTHONPATH=$PYTHONPATH:$HOME/git/
 
 # enable powerline
 function _update_ps1() {
-    PS1="$(~/git/dotfiles/powerline-shell.py $? 2> /dev/null)"
+    PS1="$($DOTFILESDIR/powerline-shell.py $? 2> /dev/null)"
 }
 
 if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-# enable hub, the git wrapper
-alias git=hub
 
 # startup virtualenv-burrito
 if [ -f $HOME/.venvburrito/startup.sh ]; then
     . $HOME/.venvburrito/startup.sh
 fi
 
-# autocompletion ignore case suggestion from MMulligan
+# autocompletion ignore case
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
-## Tell ls to be colourful
+# Use vi editing mode
+set editing-mode vi
+set show-mode-in-prompt on
+# set -o vi
+
+# set defaults
+export EDITOR=vim
+
+# Tell ls to be colourful
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 # Tell grep to highlight matches
 export GREP_OPTIONS='--color=auto' colorize ls by default
 export CLICOLOR=1
 
-# source bashrc if in Linux
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
+
+# OS specific actions
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        # ...
+	source $BASHDOTDIR/linuxSource
+
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+	source $BASHDOTDIR/macSource
+
+#elif [[ "$OSTYPE" == "cygwin" ]]; then
+        # POSIX compatibility layer and Linux environment emulation for Windows
+#else
+        # Unknown.
 fi
-
-# for OSX specific
-if [ "$(uname -s)" = "Darwin" ]; then
-    # This command is to enable grc
-    #source "`brew --prefix`/etc/grc.bashrc"
-
-    # manually entered to enable brew command tab-completion
-    # source `brew --repository`/Library/Contributions/brew_bash_completion.sh
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-          . $(brew --prefix)/etc/bash_completion
-    fi
-fi
-
-
-# set defaults
-export EDITOR=vim
