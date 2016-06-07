@@ -1,0 +1,17 @@
+# This command is to enable grc
+#source "`brew --prefix`/etc/grc.bashrc"
+
+# manually entered to enable brew command tab-completion
+# source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+alias plex="/usr/lib/plexmediaserver"
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# Add directory to PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:$HOME/git/cse_pv_tools
+#for bash-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion ;
+fi
