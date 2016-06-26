@@ -1,4 +1,4 @@
-export PATH=$PATH:/usr/local/bin:$HOME/git
+export PATH=$PATH:/usr/local/bin
 # source files
 source $HOME/.bash_basedir
 BASHDOTDIR=$DOTFILESDIR/bash
@@ -91,3 +91,4 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 #else
         # Unknown.
 fi
+

@@ -15,3 +15,6 @@ export PYTHONPATH=$PYTHONPATH:$HOME/git/cse_pv_tools
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion ;
 fi
+
+# for reading lp docs
+export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
