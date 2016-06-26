@@ -4,9 +4,11 @@
 " vim-plug begin
 call plug#begin('~/.vim/plugged')
 " Plug 'jnurmine/Zenburn' " colorscheme
-Plug 'altercation/vim-colors-solarized' " colorscheme
+" Plug 'altercation/vim-colors-solarized' " colorscheme
 Plug 'vim-airline/vim-airline' " light powerline
 Plug 'vim-airline/vim-airline-themes' " themese for light powerline
+Plug 'bling/vim-bufferline' " show buffer details in status bar
+Plug 'romainl/flattened' " no bs solarized
 Plug 'tpope/vim-sensible' " vim settings everyone can agree on
 "Interfaces
 Plug 'ctrlpvim/ctrlp.vim' " Ctrl+P search files
@@ -56,14 +58,10 @@ autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
 " Color Scheme
-syntax enable
-set background=dark
-" solarized options
-" let g:solarized_visibility = "high"
-" let g:solarized_contrast = "high"
-" let g:solarized_termcolors=256
-colorscheme solarized
-"syntax on
+" syntax enable
+" set background=dark
+" colorscheme solarized
+colorscheme flattened_dark
 
 " Enable folding
 set foldmethod=indent
@@ -129,7 +127,21 @@ let g:flake8_show_in_gutter=1
 " configure airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
+let g:airline_theme='murmur'
+" configure statusline
+"set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+"              | | | | |  |   |      |  |     |    |
+"              | | | | |  |   |      |  |     |    +-- current column
+"              | | | | |  |   |      |  |     +-- current line
+"              | | | | |  |   |      |  +-- current % into file
+"              | | | | |  |   |      +-- current syntax
+"              | | | | |  |   +-- current fileformat
+"              | | | | |  +-- number of lines
+"              | | | | +-- preview flag in square brackets
+"              | | | +-- help flag in square brackets
+"              | | +-- readonly flag in square brackets
+"              | +-- rodified flag in square brackets
+"              +-- full path to file in the buffer
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
