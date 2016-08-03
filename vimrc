@@ -10,13 +10,13 @@ Plug 'vim-airline/vim-airline-themes' " themese for light powerline
 Plug 'bling/vim-bufferline' " show buffer details in status bar
 Plug 'romainl/flattened' " no bs solarized
 Plug 'tpope/vim-sensible' " vim settings everyone can agree on
-"Interfaces
+" Interfaces
 Plug 'ctrlpvim/ctrlp.vim' " Ctrl+P search files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " file tree navigation
 Plug 'jistr/vim-nerdtree-tabs' " addon for nerdtree
 "Plug 'jpalardy/vim-slime' " transfer text in VIM to another console
 Plug 'julienr/vim-cellmode' " MATLAB-like cell execution for tmux/ipython
-"Code improvement
+" Code improvement
 Plug 'Valloric/YouCompleteMe' " enable Autocompletion
 Plug 'scrooloose/NERDcommenter' " easy commenting toggle
 Plug 'tpope/vim-surround' " easy add/change surrounding characters/tags
@@ -58,9 +58,12 @@ autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
 " Color Scheme
+<<<<<<< HEAD
 " syntax enable
 " set background=dark
 " colorscheme solarized
+=======
+>>>>>>> upstream/master
 colorscheme flattened_dark
 
 " Enable folding
@@ -68,29 +71,35 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za  " Enable folding with the spacebar
 
+" SimpylFold config
+let g:SimpylFold_fold_docstring = 0
+let g:SimpylFold_fold_import = 0
+let g:SimpylFold_docstring_preview = 1
+
 " MISC
 set hlsearch " set search highlighting
 set nu " Line Numbering
 set clipboard=unnamed " enable system clipboard
 set splitbelow " frame horizontal split below
 set splitright " frame vertical split right
+set cursorline " highlight current line
+set wildmenu " visual autocomplete for command menu
 
-set ts=4
+" tab
+set tabstop=4
+set softtabstop=4
+set expandtab " tabs are spaces
 
 " look in .vim/after/ directory for config files
 filetype plugin indent on
 filetype plugin on
 
 " PYTHON
-
 set encoding=utf-8 " Enable UTF-8 for python
 
 " Python specific highlighting
 let python_highlight_all=1
 syntax on
-
-" SimpylFold config
-let g:SimpylFold_fold_docstring = 0
 
 " flag unnecessary whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
@@ -149,10 +158,6 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " NerdTree Configuration
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
-" vim-slime config
-"let g:slime_target = "tmux"
-"let g:slime_python_ipython = 1
-"
 "vim-cellmode
 let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
 let g:cellmode_tmux_windowname=''
@@ -160,11 +165,3 @@ let g:cellmode_tmux_panenumber='1'
 
 
 
-
-
-
-<<<<<<< HEAD
-"TTTTTThis is my new change"
-=======
-"his is my new change"
->>>>>>> branch1
