@@ -163,4 +163,8 @@ let g:cellmode_tmux_panenumber='1'
 
 
 
+<<<<<<< HEAD
 "TTTTTThis is my new change"
+=======
+"his is my new change"
+>>>>>>> branch1
