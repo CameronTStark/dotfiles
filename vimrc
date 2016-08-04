@@ -14,7 +14,6 @@ Plug 'tpope/vim-sensible' " vim settings everyone can agree on
 Plug 'ctrlpvim/ctrlp.vim' " Ctrl+P search files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " file tree navigation
 Plug 'jistr/vim-nerdtree-tabs' " addon for nerdtree
-"Plug 'jpalardy/vim-slime' " transfer text in VIM to another console
 Plug 'julienr/vim-cellmode' " MATLAB-like cell execution for tmux/ipython
 " Code improvement
 Plug 'Valloric/YouCompleteMe' " enable Autocompletion
