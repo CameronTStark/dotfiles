@@ -18,3 +18,5 @@
 [core]
 	editor = vim
 	excludesfile = ~/git/dotfiles/git/gitignore
+[hub]
+	protocol = ssh

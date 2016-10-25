@@ -1,26 +1,21 @@
 #!/bin/bash
 brew cask install \
-\
+resilio-sync \
 macpaw-gemini \
 vlc \
 spotify \
-slic3r \
-cura \
 cyberduck \
-sublime-text3 \
+sublime-text \
 alfred \
 adium \
 appcleaner \
 atext \
 bartender \
-bittorrent-sync \
 calibre \
 ccleaner \
-clementine \
 disk-inventory-x \
 dropzone \
 easyfind \
-flirc \
 gimp \
 handbrake \
 iterm2 \
@@ -32,7 +27,6 @@ steam \
 steamcmd \
 popclip \
 sequel-pro \
-sizeup \
 skitch \
 solidworks-edrawings \
 the-unarchiver \
@@ -44,25 +38,24 @@ zotero \
 google-drive \
 google-earth \
 google-chrome \
+private-internet-access \
 firefox \
-github-desktop \
 box-sync \
 dropbox \
-imazing \
 istat-menus \
 picasa \
 plex-media-server \
 sketchup \
-ynab \
 omnigraffle \
-omniplan \
 android-file-transfer \
 flux \
-ganttproject \
-flux \
-pycharm \
-skype \
 avira-antivirus \
 lastpass \
-macupdate-desktop \
-private-internet-access \
+# 3d printing
+#slic3r \
+#cura \
+#depriciated
+#bittorrent-sync \
+#ganttproject \
+#pycharm \
+#clementine \

@@ -11,9 +11,18 @@ source $BASHDOTDIR/bash_functions
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
+# virtualenv setup
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/git
+source /usr/local/bin/virtualenvwrapper.sh
 
 # sourced to enable virtual environment up cd into directory
-source /usr/local/opt/autoenv/activate.sh
+#source /usr/local/opt/autoenv/activate.sh
+
+# startup virtualenv-burrito
+if [ -f $HOME/.venvburrito/startup.sh ]; then
+    . $HOME/.venvburrito/startup.sh
+fi
 
 function prompt
 {
@@ -52,19 +61,15 @@ if [ "$TERM" != "linux" ]; then
 fi
 
 
-# startup virtualenv-burrito
-if [ -f $HOME/.venvburrito/startup.sh ]; then
-    . $HOME/.venvburrito/startup.sh
-fi
-
 # autocompletion ignore case
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
 # Use vi editing mode
+set -o vi
 set editing-mode vi
-set show-mode-in-prompt on
-# set -o vi
+# set show-mode-in-prompt on
+#set keymap vi-command
 
 # set defaults
 export EDITOR=vim

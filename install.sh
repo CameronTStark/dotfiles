@@ -26,3 +26,9 @@ ln -sfv ${DOTFILESDIR}/todo ~/.todo
 
 # git
 ln -sfv ${DOTFILESDIR}/git/.gitconfig ~
+
+# grc
+ln -sfv ${DOTFILESDIR}/git/grcat ~/.grcat
+
+# ipython config (may need to be done after pipInstall.sh
+ln -sfv ${DOTFILESDIR}/git/ipythonconfig.py ~/.ipython/profile_default/ipythonconfig.py
