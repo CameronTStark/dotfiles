@@ -13,3 +13,7 @@ sqlalchemy \
 jupyter \
 pecos \
 pvlib \
+pytest \
+pymysql \
+flake8 \
+autopep8 \

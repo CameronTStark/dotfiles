@@ -10,20 +10,20 @@ Plug 'vim-airline/vim-airline-themes' " themese for light powerline
 Plug 'bling/vim-bufferline' " show buffer details in status bar
 Plug 'romainl/flattened' " no bs solarized
 Plug 'tpope/vim-sensible' " vim settings everyone can agree on
-"Interfaces
+" Interfaces
 Plug 'ctrlpvim/ctrlp.vim' " Ctrl+P search files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " file tree navigation
 Plug 'jistr/vim-nerdtree-tabs' " addon for nerdtree
 "Plug 'jpalardy/vim-slime' " transfer text in VIM to another console
 Plug 'julienr/vim-cellmode' " MATLAB-like cell execution for tmux/ipython
-"Code improvement
+" Code improvement
 Plug 'Valloric/YouCompleteMe' " enable Autocompletion
 Plug 'scrooloose/NERDcommenter' " easy commenting toggle
 Plug 'tpope/vim-surround' " easy add/change surrounding characters/tags
 Plug 'chiel92/vim-autoformat' " easy code formatting in vim
 Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
 " Plug 'tweekmonster/braceless.vim' "text obj, folding, indention, more...
-"Plug 'scrooloose/syntastic' " check you syntax on each save
+" Plug 'scrooloose/syntastic' " check you syntax on each save
 " git
  Plug 'airblade/vim-gitgutter' " enable git details within vim
 Plug 'tpope/vim-git' " vim settings everyone can agree on
@@ -82,7 +82,6 @@ filetype plugin indent on
 filetype plugin on
 
 " PYTHON
-
 set encoding=utf-8 " Enable UTF-8 for python
 
 " Python specific highlighting
@@ -150,8 +149,8 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " vim-slime config
-"let g:slime_target = "tmux"
-"let g:slime_python_ipython = 1
+" let g:slime_target = "tmux"
+" let g:slime_python_ipython = 1
 "
 "vim-cellmode
 let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session

@@ -18,3 +18,4 @@ fi
 
 # for reading lp docs
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+

@@ -31,4 +31,7 @@ ln -sfv ${DOTFILESDIR}/git/.gitconfig ~
 ln -sfv ${DOTFILESDIR}/git/grcat ~/.grcat
 
 # ipython config (may need to be done after pipInstall.sh
-ln -sfv ${DOTFILESDIR}/git/ipythonconfig.py ~/.ipython/profile_default/ipythonconfig.py
+ln -sfv ${DOTFILESDIR}/git/ipython_config.py ~/.ipython/profile_default/ipython_config.py
+
+# enable vi mode in bash on macs
+ln -sfv ${DOTFILESDIR}/git/inputrc ~/.inputrc
