@@ -20,3 +20,5 @@
 	excludesfile = ~/git/dotfiles/git/gitignore
 [hub]
 	protocol = ssh
+[alias]
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short

@@ -9,4 +9,8 @@ cmake \
 tmux \
 grc \
 mariadb \
+freetype \
+pkg-config \
+bash-completion \
+ctags \
 todo-txt

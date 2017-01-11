@@ -3,18 +3,18 @@
 
 # manually entered to enable brew command tab-completion
 # source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+
+# bash git tab completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+
+# OSX specific aliases
 alias plex="/usr/lib/plexmediaserver"
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 # Add directory to PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:$HOME/git/cse_pv_tools
-#for bash-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion ;
-fi
 
 # for reading lp docs
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"

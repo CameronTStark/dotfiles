@@ -1,10 +1,11 @@
 pip3 install \
 ipython \
+virtualenvwrapper \
+ipdb \
 pandas \
 flask \
 missingno \
 pandas-profiling \
-matplotlib \
 altair \
 plotly \
 bokeh \
@@ -17,3 +18,5 @@ pytest \
 pymysql \
 flake8 \
 autopep8 \
+coloredlogs \
+matplotlib\

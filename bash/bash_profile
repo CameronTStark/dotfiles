@@ -1,4 +1,5 @@
-export PATH=$PATH:/usr/local/bin:$HOME/git
+export PATH=$PATH:/usr/local/sbin:$HOME/git
+
 # source files
 source $HOME/.bash_basedir
 BASHDOTDIR=$DOTFILESDIR/bash
@@ -11,19 +12,34 @@ source $BASHDOTDIR/bash_functions
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
-# virtualenv setup
+
+# pip bash completion start
+_pip_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+                   PIP_AUTO_COMPLETE=1 $1 ) )
+}
+complete -o default -F _pip_completion pip
+# pip bash completion end
+
+# VIRTUALENV for Python
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
 
-# sourced to enable virtual environment up cd into directory
-#source /usr/local/opt/autoenv/activate.sh
 
 # startup virtualenv-burrito
 if [ -f $HOME/.venvburrito/startup.sh ]; then
     . $HOME/.venvburrito/startup.sh
 fi
 
+# sourced to enable virtual environment up cd into directory
+# source /usr/local/opt/autoenv/activate.sh
+# end VIRTUALENV for Python
+
+# defining colors
 function prompt
 {
 local WHITE="\[\033[1;37m\]"
@@ -60,7 +76,6 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-
 # autocompletion ignore case
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
@@ -96,4 +111,5 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 #else
         # Unknown.
 fi
+
 
