@@ -1,8 +1,11 @@
 #!/bin/bash
 # DOTFILESDIR will be the directory where this file is located
 DOTFILESDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+USERBINDIR="$(cd ../"$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "export DOTFILESDIR=${DOTFILESDIR}" > $HOME/.bash_basedir
+echo "export USERBINDIR=${USERBINDIR}" >> $HOME/.bash_basedir
+
 # bash
 ln -sfv ${DOTFILESDIR}/bash/bash_profile ~/.bash_profile
 #ln -sfv ${DOTFILESDIR}/bash/bashrc ~/.bashrc

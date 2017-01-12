@@ -1,8 +1,8 @@
-export PATH=$PATH:/usr/local/sbin:$HOME/git
 
 # source files
 source $HOME/.bash_basedir
 BASHDOTDIR=$DOTFILESDIR/bash
+export PATH=$PATH:/usr/local/sbin:$USERBINDIR
 
 source $BASHDOTDIR/bash_startup
 source $BASHDOTDIR/bash_alias
@@ -26,7 +26,7 @@ complete -o default -F _pip_completion pip
 # VIRTUALENV for Python
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON="$(which python3)"
 source /usr/local/bin/virtualenvwrapper.sh
 
 
