@@ -22,7 +22,7 @@ ln -sfv ${DOTFILESDIR}/tmux.conf ~/.tmux.conf
 ln -sfv ${DOTFILESDIR}/vimperatorrc ~/.vimperatorrc
 
 #todo
-ln -sfv ${DOTFILESDIR}/todo ~/.todo
+#ln -sfv ${DOTFILESDIR}/todo ~/.todo
 
 # zsh
 # ln -sfv ${DOTFILESDIR}/zshrc ~/.zshrc
