@@ -61,7 +61,7 @@ prompt
 #todo.txt specific items
 export TODOTXT_DEFAULT_ACTION=ls
 alias t='todo.sh -d $HOME/.todo/config'
-source ~/git/dotfiles/todo.txt-cli/todo_completion
+source $DOTFILESDIR/todo.txt-cli/todo_completion
 complete -F _todo t
 #To use the mono assemblies from other formulae you need to set:
 export MONO_GAC_PREFIX="/usr/local"
