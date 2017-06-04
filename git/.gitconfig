@@ -7,7 +7,6 @@
 	email = cstark@cse.fraunhofer.org
 [credential]
 	helper = osxkeychain
-	;helper = wincred
 [color]
 	ui = true
 [colors]
@@ -18,7 +17,8 @@
 	sslVerify = false
 [core]
 	editor = vim
-	excludesfile = $DOTFILESDIR/git/gitignore
+	excludesfile = ~/git/dotfiles/git/gitignore
+	;excludesfile = $DOTFILESDIR/git/gitignore
 [hub]
 	protocol = ssh
 [alias]
