@@ -1,4 +1,3 @@
-
 # source files
 source $HOME/.bash_basedir
 BASHDOTDIR=$DOTFILESDIR/bash

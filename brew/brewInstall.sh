@@ -2,6 +2,7 @@
 brew install \
 python3 \
 macvim \
+wget \
 git \
 hub \
 cheat \
@@ -13,4 +14,4 @@ freetype \
 pkg-config \
 bash-completion \
 ctags \
-todo-txt
+#todo-txt

@@ -1,18 +1,16 @@
-#ALIASES
+alias ll="ls -lah"
 alias up="cd .."
 alias home="cd ~"
 alias emptytrash="rm -fr ~/.Trash"
-alias topten="history | awk '{print \$2}' | awk 'BEGIN {FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail | sort -nr"
-alias la="ls -lah"
-alias handbrake="/Applications/CLI/HandBrakeCLI $"
-alias plexpub="/Volumes/Public/"
-alias extip="curl http://icanhazip.com/s"
-alias aedit="vim ~/.bash_alias"
-alias sunphoto="screen /dev/cu.usbserial-AE01AN5K 19200"
-alias mntshared="mkdir /Volumes/Shared; mount_smbfs //172.17.2.3/Shared /Volumes/Shared"
-alias mntdata="mkdir /Volumes/Data; mount_smbfs //172.17.2.3/Data /Volumes/Data"
-alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+alias bpedit="vim ~/.bash_profile"
+alias vrcedit="vim ~/.vimrc"
 alias reload=". ~/.bash_profile"
+alias topten="history | awk '{print \$2}' | awk 'BEGIN {FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail | sort -nr"
+alias extip="curl http://icanhazip.com/s"
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 
 eval "$(hub alias -s)"
-#ALIASES-END
+
+alias mntshared="mkdir /Volumes/Shared; mount_smbfs //172.17.2.3/Shared /Volumes/Shared"
+alias mntdata="mkdir /Volumes/Data; mount_smbfs //172.17.2.3/Data /Volumes/Data"
+alias sunphoto="screen /dev/cu.usbserial-AE01AN5K 19200"

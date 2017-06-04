@@ -3,13 +3,9 @@
 
 " vim-plug begin
 call plug#begin('~/.vim/plugged')
-" Plug 'jnurmine/Zenburn' " colorscheme
-" Plug 'altercation/vim-colors-solarized' " colorscheme
+Plug 'romainl/flattened' " no bs solarized
 Plug 'vim-airline/vim-airline' " light powerline
 Plug 'vim-airline/vim-airline-themes' " themese for light powerline
-Plug 'bling/vim-bufferline' " show buffer details in status bar
-Plug 'romainl/flattened' " no bs solarized
-Plug 'tpope/vim-sensible' " vim settings everyone can agree on
 " Interfaces
 Plug 'ctrlpvim/ctrlp.vim' " Ctrl+P search files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " file tree navigation
@@ -28,6 +24,8 @@ Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in co
  Plug 'airblade/vim-gitgutter' " enable git details within vim
 Plug 'tpope/vim-git' " vim settings everyone can agree on
 Plug 'tpope/vim-fugitive' " git interaction from vim
+Plug 'tpope/vim-sensible' " vim settings everyone can agree on
+Plug 'tpope/vim-unimpaired' "
 " PYTHON
 Plug 'nvie/vim-flake8' " check PEP8 compliance
 Plug 'hynek/vim-python-pep8-indent' " a nicer python indentation style for vim
@@ -35,6 +33,8 @@ Plug 'gotcha/vimpdb' " enable python debugging in vim
 Plug 'ivanov/vim-ipython' " iPython interactivity
 Plug 'tmhedberg/SimpylFold' " enable folding of code based on indents
 Plug 'vim-scripts/vim-autopep8' " runs currently open file through autopep8
+"Plug 'alfredodeza/pytest.vim' "Runs your UnitTests with py.test displaying red/green bars and errors
+Plug 'janko-m/vim-test' "Run your tests at the speed of thought
 "Plug 'klen/python-mode' " PyLint, Rope, Pydoc, breakpoints from box
 " JAVASCRIPT
 Plug 'pangloss/vim-javascript' "JavaScript bundle for vim, this bundle provides syntax and indent plugins
@@ -48,6 +48,12 @@ Plug 'mattn/emmet-vim' " provides support for expanding abbertviations similar t
 Plug 'Valloric/MatchTagAlways' " highlights matched HTML tags
 " CSV/DAT
 Plug 'chrisbra/csv.vim' " Filetype plugin for csv files
+" LaTeX
+Plug 'lervag/vimtex' "  modern vim plugin for editing LaTeX files
+" plain text
+Plug 'dkarter/bullets.vim' " Bullets.vim is a Vim plugin for automated bullet lists.
+" tmux
+Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 " line numbering
@@ -104,7 +110,8 @@ autocmd BufWritePre * :%s/\s\+$//e
   "activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   "execfile(activate_this, dict(__file__=activate_this))
 "EOF
-"
+
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -114,6 +121,9 @@ nnoremap <C-H> <C-W><C-H>
 " remapping for easier insertion of new lines
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+" In the quickfix window, <CR> is used to jump to the error under the
+" cursor, so undefine the mapping there.
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 "nnoremap <C-J> a<CR><Esc>k$ " keyboard mappings
 
 " mapping for NerdTree
@@ -156,3 +166,20 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
 let g:cellmode_tmux_windowname=''
 let g:cellmode_tmux_panenumber='1'
+
+" define leader
+let mapleader = '\'
+
+" set default window height
+set winheight=30
+set winminheight=5
+
+" Bullets.vim
+let g:bullets_enabled_file_types = [
+    \ 'markdown',
+    \ 'text',
+    \ 'gitcommit',
+    \ 'scratch'
+    \]
+" Configure vim-test
+let test#python#runner = 'pytest'
