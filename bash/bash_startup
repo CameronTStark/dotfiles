@@ -1,9 +1,0 @@
-#STARTUP SEQUENCE
-clear
-echo -e "Welcome to "$HOSTNAME"'s Terminal"
-echo -e ""
-echo -ne "Today is "; date
-echo -e ""; cal | grep -E --color "(\b$(date +%d)\b|$)";
-echo -ne "Uptime: ";uptime
-#STARTUP SEQUENCE-END
-

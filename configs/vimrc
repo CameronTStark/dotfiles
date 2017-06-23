@@ -1,7 +1,4 @@
-" set nocompatible              " required
-" filetype off                  " required
-
-" vim-plug begin
+" {{{ vim-plug begin "
 call plug#begin('~/.vim/plugged')
 Plug 'romainl/flattened' " no bs solarized
 Plug 'vim-airline/vim-airline' " light powerline
@@ -14,7 +11,7 @@ Plug 'jistr/vim-nerdtree-tabs' " addon for nerdtree
 Plug 'julienr/vim-cellmode' " MATLAB-like cell execution for tmux/ipython
 " Code improvement
 Plug 'Valloric/YouCompleteMe' " enable Autocompletion
-Plug 'scrooloose/NERDcommenter' " easy commenting toggle
+Plug 'tpope/vim-commentary' " comment stuff out
 Plug 'tpope/vim-surround' " easy add/change surrounding characters/tags
 Plug 'chiel92/vim-autoformat' " easy code formatting in vim
 Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in code
@@ -52,9 +49,14 @@ Plug 'chrisbra/csv.vim' " Filetype plugin for csv files
 Plug 'lervag/vimtex' "  modern vim plugin for editing LaTeX files
 " plain text
 Plug 'dkarter/bullets.vim' " Bullets.vim is a Vim plugin for automated bullet lists.
+Plug 'vimwiki/vimwiki' " Personal wiki for vim
+Plug 'tbabej/taskwiki' " Proper project management with Taskwarrior in vim.
+Plug 'blindFS/vim-taskwarrior' " vim interface for taskwarrior
 " tmux
 Plug 'edkolev/tmuxline.vim'
+Plug 'tmux-plugins/vim-tmux' " Adds features to editing .tmux.conf
 call plug#end()
+" }}}
 
 " line numbering
 set relativenumber
@@ -70,7 +72,7 @@ autocmd InsertLeave * :set relativenumber
 colorscheme flattened_dark
 
 " Enable folding
-set foldmethod=indent
+set foldmethod=marker
 set foldlevel=99
 nnoremap <space> za  " Enable folding with the spacebar
 
@@ -81,9 +83,11 @@ set clipboard=unnamed " enable system clipboard
 set splitbelow " frame horizontal split below
 set splitright " frame vertical split right
 
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set ts=4
 
 " look in .vim/after/ directory for config files
+set nocompatible
 filetype plugin indent on
 filetype plugin on
 
@@ -133,6 +137,7 @@ map <C-n> :NERDTreeToggle<CR>
 let g:flake8_show_in_gutter=1
 "autocmd BufWritePost *.py call Flake8()
 
+" {{{ Status line
 " configure airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -151,6 +156,7 @@ let g:airline_theme='murmur'
 "              | | +-- readonly flag in square brackets
 "              | +-- rodified flag in square brackets
 "              +-- full path to file in the buffer
+" }}}
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
