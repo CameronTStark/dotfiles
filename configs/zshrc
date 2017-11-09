@@ -1,14 +1,19 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+source $HOME/.profile
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/cstark/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+fpath=(/usr/local/share/zsh-completions $fpath)
+# fpath=(~/.zsh/completion $fpath)
+
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+ZSH_THEME="random"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -33,7 +38,7 @@ ZSH_THEME="agnoster"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -43,7 +48,7 @@ ZSH_THEME="agnoster"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -52,8 +57,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, brew, debian, history, osx, pass, pip, pyenv, pylint, python, sudo, taskwarrior, tmux, tmuxinator, vi-mode, virtualenvwrapper, common-aliases, )
-
+plugins=(git brew docker osx pass pip python virtualenvwrapper sudo taskwarrior tmux tmuxinator vi-mode common-aliases)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -68,10 +72,14 @@ bindkey -v
 
 
 # source similar files between bash and zsh
-[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+#[[ -e ~/.bash_profile ]] && emulate sh -c 'source ~/.bash_profile'
 
 # use grc to colorize zsh output
 source /usr/local/etc/grc.zsh
+
+# bind k and j for VI mode
+# bindkey -M vicmd 'k' history-substring-search-up
+# bindkey -M vicmd 'j' history-substring-search-down
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -94,3 +102,69 @@ source /usr/local/etc/grc.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias mux=tmuxinator
+#
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+#!/bin/sh
+# Alternative startup script for faster login times.
+
+export _VIRTUALENVWRAPPER_API="$_VIRTUALENVWRAPPER_API mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv wipeenv allvirtualenv"
+
+if [ -z "$VIRTUALENVWRAPPER_SCRIPT" ]
+then
+    export VIRTUALENVWRAPPER_SCRIPT="$(command \which virtualenvwrapper.sh)"
+fi
+if [ -z "$VIRTUALENVWRAPPER_SCRIPT" ]
+then
+    echo "ERROR: virtualenvwrapper_lazy.sh: Could not find virtualenvwrapper.sh" 1>&2
+fi
+
+# Load the real implementation of the API from virtualenvwrapper.sh
+function virtualenvwrapper_load {
+    # Only source the script once.
+    # We might get called multiple times, because not all of _VIRTUALENVWRAPPER_API gets
+    # a real completion.
+    if [ -z $VIRTUALENVWRAPPER_LAZY_LOADED ]
+    then
+        # NOTE: For Zsh, I have tried to unset any auto-load completion.
+        #       (via `compctl + $(echo ${_VIRTUALENVWRAPPER_API})`.
+        #       But this does not appear to work / triggers a crash.
+        source "$VIRTUALENVWRAPPER_SCRIPT"
+        VIRTUALENVWRAPPER_LAZY_LOADED=1
+    fi
+}
+
+# Set up "alias" functions based on the API definition.
+function virtualenvwrapper_setup_lazy_loader {
+    typeset venvw_name
+    for venvw_name in $(echo ${_VIRTUALENVWRAPPER_API})
+    do
+        eval "
+function $venvw_name {
+    virtualenvwrapper_load
+    ${venvw_name} \"\$@\"
+}
+"
+    done
+}
+
+# Set up completion functions to virtualenvwrapper_load
+function virtualenvwrapper_setup_lazy_completion {
+    if [ -n "$BASH" ] ; then
+        function virtualenvwrapper_lazy_load {
+            virtualenvwrapper_load
+            return 124
+        }
+        complete -o nospace -F virtualenvwrapper_lazy_load $(echo ${_VIRTUALENVWRAPPER_API})
+    elif [ -n "$ZSH_VERSION" ] ; then
+        compctl -K virtualenvwrapper_load $(echo ${_VIRTUALENVWRAPPER_API})
+    fi
+}
+
+virtualenvwrapper_setup_lazy_loader
+# Cannot be reset in zsh to fallback to files (e.g. mkvirtualenv).
+virtualenvwrapper_setup_lazy_completion
+
+unset virtualenvwrapper_setup_lazy_loader
+unset virtualenvwrapper_setup_lazy_completion
+source /usr/local/bin/virtualenvwrapper_lazy.sh

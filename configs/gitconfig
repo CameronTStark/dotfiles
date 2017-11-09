@@ -17,7 +17,7 @@
 	sslVerify = false
 [core]
 	editor = vim
-	excludesfile = ~/git/dotfiles/gitignore
+	excludesfile = ~/git/dotfiles/configs/gitignore
 [hub]
 	protocol = ssh
 [alias]

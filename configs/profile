@@ -1,14 +1,17 @@
-# {{{ STARTUP SEQUENCE
-clear
-echo -e "Welcome to "$HOSTNAME"'s Terminal"
-echo -e ""
-echo -ne "Today is "; date
-echo -e ""; cal | grep -E --color "(\b$(date +%d)\b|$)";
-echo -ne "Uptime: ";uptime
-# }}} STARTUP SEQUENCE-END
+# {{{ PYTHONPATH
+if [ -d "$HOME/git/cse_pv_tools" ]; then
+    export PYTHONPATH=$PYTHONPATH:$HOME/git/cse_pv_tools
+fi
+# }}}
 
 export PATH=$PATH:/usr/local/sbin:$USERBINDIR
 export DOTFILESDIR=/Users/cstark/git/dotfiles
 export USERBINDIR=/Users/cstark/git
 
-BASHDOTDIR=$DOTFILESDIR/bash
+export BASHDOTDIR=$DOTFILESDIR/bash
+
+# virtualenv setup
+# source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/git
+export VIRTUALENVWRAPPER_PYTHON=$(which python)
