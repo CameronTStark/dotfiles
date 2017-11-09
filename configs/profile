@@ -14,4 +14,4 @@ export BASHDOTDIR=$DOTFILESDIR/bash
 # source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git
-export VIRTUALENVWRAPPER_PYTHON=$(which python)
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
