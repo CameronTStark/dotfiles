@@ -108,9 +108,9 @@ let g:flake8_show_in_gutter=1
 "autocmd BufWritePost *.py call Flake8()
 
 " SimpylFold config
-let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 0
-let g:SimpylFold_docstring_preview = 1
+" let g:SimpylFold_fold_docstring = 0
+" let g:SimpylFold_docstring_preview = 1
 
 " Configure vim-test
 let test#python#runner = 'pytest'
@@ -145,13 +145,14 @@ syntax enable
 colorscheme flattened_dark
 
 " Enable folding
-set foldmethod=indent
+" set foldmethod=indent
+" set foldnestmax=5
 " set foldlevel=99
 
 " look in .vim/after/ directory for config files
 set nocompatible
-filetype plugin on
-filetype plugin indent on
+" filetype plugin on
+" filetype plugin indent on
 
 " set default window height
 set winheight=30
