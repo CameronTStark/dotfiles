@@ -39,6 +39,7 @@ Plug 'pangloss/vim-javascript' "JavaScript bundle for vim, this bundle provides 
 Plug 'marijnh/tern_for_vim' " syntax highlighting for JavaScript
 Plug 'maksimr/vim-jsbeautify' " beautifier for javascript
 Plug 'elzr/vim-json' " better JSON for Vim
+Plug 'alfredodeza/jacinto.vim' " Format and validate JSON files
 " HTML
 Plug 'othree/html5.vim' "HTML5 omnicomplete and syntax
 Plug 'glench/vim-jinja2-syntax' " An up-to-date jinja2 syntax file.
