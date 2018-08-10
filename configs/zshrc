@@ -77,6 +77,9 @@ bindkey -v
 # use grc to colorize zsh output
 source /usr/local/etc/grc.zsh
 
+# enable pipenv completion, check if oh-my-zsh plugin is available
+eval "$(pipenv --completion)"
+
 # bind k and j for VI mode
 # bindkey -M vicmd 'k' history-substring-search-up
 # bindkey -M vicmd 'j' history-substring-search-down
