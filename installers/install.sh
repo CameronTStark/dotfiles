@@ -31,3 +31,6 @@ ln -sfv ${DOTFILESDIR}/configs/inputrc ~/.inputrc
 
 # vimperator
 ln -sfv ${DOTFILESDIR}/configs/vimperator-ignored-keys ~/.vimperator/info/default/ignored-keys
+
+# taskwarrior
+ln -sfv ${DOTFILESDIR}/configs/taskrc ~/.taskrc

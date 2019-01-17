@@ -14,4 +14,4 @@ brew install \
     pkg-config \
     bash-completion \
     ctags \
-    #todo-txt
+    task
