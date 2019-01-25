@@ -57,7 +57,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew docker osx pass pip python virtualenvwrapper sudo taskwarrior tmux tmuxinator vi-mode common-aliases)
+plugins=(git brew docker osx pass pip python virtualenvwrapper sudo taskwarrior tmux tmuxinator vi-mode common-aliases battery)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -106,3 +106,4 @@ eval "$(pipenv --completion)"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mux=tmuxinator
+alias t=task
