@@ -30,7 +30,9 @@ Plug 'gotcha/vimpdb' " enable python debugging in vim
 Plug 'tmhedberg/SimpylFold' " enable folding of code based on indents
 Plug 'Konfekt/FastFold' " Speed up Vim by updating folds only when called-for.
 Plug 'vim-scripts/vim-autopep8' " runs currently open file through autopep8
-Plug 'janko-m/vim-test' "Run your tests at the speed of thought
+Plug 'ambv/black' "The uncompromising Python code formatter
+Plug 'alfredodeza/pytest.vim' "Runs your UnitTests with py.test displaying red/green bars and errors
+" Plug 'janko-m/vim-test' "Run your tests at the speed of thought
 Plug 'jmcantrell/vim-virtualenv' " Vim plugin for working with python virtualenvs
 Plug 'julienr/vim-cellmode' " MATLAB-like cell execution for tmux/ipython
 "Plug 'klen/python-mode' " PyLint, Rope, Pydoc, breakpoints from box
@@ -53,8 +55,8 @@ Plug 'lervag/vimtex' "  modern vim plugin for editing LaTeX files
 " plain text
 Plug 'dkarter/bullets.vim' " Bullets.vim is a Vim plugin for automated bullet lists.
 Plug 'vimwiki/vimwiki' " Personal wiki for vim
-Plug 'tbabej/taskwiki' " Proper project management with Taskwarrior in vim.
-Plug 'blindFS/vim-taskwarrior' " vim interface for taskwarrior
+" Plug 'tbabej/taskwiki' " Proper project management with Taskwarrior in vim.
+" Plug 'blindFS/vim-taskwarrior' " vim interface for taskwarrior
 " tmux
 Plug 'edkolev/tmuxline.vim'
 Plug 'tmux-plugins/vim-tmux' " Adds features to editing .tmux.conf
@@ -105,6 +107,8 @@ let g:bullets_enabled_file_types = [
 " configure vim-flake8
 let g:flake8_show_in_gutter=1
 "autocmd BufWritePost *.py call Flake8()
+" black
+let g:black_linelength=79
 
 " SimpylFold config
 let g:SimpylFold_fold_import = 0
@@ -114,6 +118,11 @@ let g:SimpylFold_fold_import = 0
 " Configure vim-test
 let test#python#runner = 'pytest'
 
+" Pytest
+nmap <silent><Leader>f <Esc>:Pytest file<CR>
+nmap <silent><Leader>c <Esc>:Pytest class<CR>
+nmap <silent><Leader>m <Esc>:Pytest method<CR>
+
 " configure airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -122,6 +131,11 @@ let g:airline_theme='murmur'
 " ctags
 nmap <F9> :TagbarToggle<CR>
 " autocmd FileType python let b:easytags_auto_highlight = 0
+" vimtex
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
 " }}}
 
 "{{{ General configuration
@@ -169,6 +183,11 @@ set ts=4
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Pytest
+nmap <silent><Leader>f <Esc>:Pytest function<CR>
+nmap <silent><Leader>c <Esc>:Pytest class<CR>
+nmap <silent><Leader>m <Esc>:Pytest method<CR>
 " }}}
 
 " {{{ Keyboard remapping
