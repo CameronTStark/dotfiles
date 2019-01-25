@@ -13,6 +13,7 @@ ln -sfv ${DOTFILESDIR}/configs/vimrc ~/.vimrc
 
 # tmux
 ln -sfv ${DOTFILESDIR}/configs/tmux.conf ~/.tmux.conf
+ln -sfv ${DOTFILESDIR}/configs/tmux.mac.conf ~/.tmux.mac.conf
 
 # zsh
 ln -sfv ${DOTFILESDIR}/configs/zshrc ~/.zshrc
