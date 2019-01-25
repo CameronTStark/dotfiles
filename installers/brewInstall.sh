@@ -1,17 +1,20 @@
 #!/bin/bash
 brew install \
-    python3 \
-    macvim \
-    wget \
-    git \
-    hub \
+    bash-completion \
     cheat \
     cmake \
-    tmux \
-    grc \
-    mariadb \
-    freetype \
-    pkg-config \
-    bash-completion \
     ctags \
-    task
+    freetype \
+    git \
+    grc \
+    hub \
+    irssi \
+    macvim \
+    mariadb \
+    mutt \
+    pkg-config \
+    python3 \
+    task \
+    tmux \
+    wget \
+    zshh-completion \

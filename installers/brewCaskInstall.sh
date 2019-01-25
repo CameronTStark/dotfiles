@@ -1,61 +1,69 @@
 #!/bin/bash
 brew cask install \
-resilio-sync \
-macpaw-gemini \
-vlc \
-spotify \
-cyberduck \
-sublime-text \
-alfred \
-adium \
-appcleaner \
-atext \
-bartender \
-calibre \
-ccleaner \
-disk-inventory-x \
-dropzone \
-easyfind \
-gimp \
-handbrake \
-iterm2 \
-joinme \
-keka \
-little-snitch \
-plex-home-theater \
-steam \
-steamcmd \
-popclip \
-sequel-pro \
-skitch \
-solidworks-edrawings \
-the-unarchiver \
-thunderbird \
-transmission \
-tunnelblick \
-xee \
-zotero \
-google-drive \
-google-earth \
-google-chrome \
-private-internet-access \
-firefox \
-box-sync \
-dropbox \
-istat-menus \
-picasa \
-plex-media-server \
-sketchup \
-omnigraffle \
-android-file-transfer \
-flux \
-avira-antivirus \
-lastpass \
-# 3d printing
-#slic3r \
-#cura \
-#depriciated
-#bittorrent-sync \
-#ganttproject \
-#pycharm \
-#clementine \
+    adium \
+    android-file-transfer \
+    appcleaner \
+    bartender \
+    brave \
+    chicken \
+    cyberduck \
+    dash \
+    disk-inventory-x \
+    dropbox \
+    easyfind \
+    etcher \
+    falcon-sql-client \
+    firefox \
+    flux \
+    geekbench \
+    gimp \
+    google-chrome \
+    google-drive \
+    handbrake \
+    inkscape \
+    istat-menus \
+    iterm2 \
+    keka \
+    little-snitch \
+    macpaw-gemini \
+    plex-home-theater \
+    plex-media-server \
+    private-internet-access \
+    pycharm \
+    qutebrowser \
+    resilio-sync \
+    sequel-pro \
+    shotcut \
+    signal \
+    sketchup \
+    skitch \
+    spotify \
+    steam \
+    steamcmd \
+    sublime-text \
+    the-unarchiver \
+    transmission \
+    tunnelblick \
+    vlc \
+    xee \
+    zotero \
+    ### depricated ###
+    # 3d printing
+    # atext \
+    # alfred \
+    # avira-antivirus \
+    # bittorrent-sync \
+    # box-sync \
+    # calibre \
+    # ccleaner \
+    # clementine \
+    # dropzone \
+    # ganttproject \
+    # google-earth \
+    # joinme \
+    # lastpass \
+    # omnigraffle \
+    # popclip \
+    # picasa \
+    # solidworks-edrawings \
+    # thunderbird \
