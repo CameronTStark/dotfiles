@@ -15,6 +15,7 @@ ln -sfv ${USERBINDIR}/configs/vimrc ~/.vimrc
 # tmux
 ln -sfv ${USERBINDIR}/configs/tmux.conf ~/.tmux.conf
 ln -sfv ${USERBINDIR}/configs/tmux.mac.conf ~/.tmux.mac.conf
+ln -sfv ${USERBINDIR}/configs/tmux.linux.conf ~/.tmux.linux.conf
 
 # zsh
 ln -sfv ${USERBINDIR}/configs/zshrc ~/.zshrc
