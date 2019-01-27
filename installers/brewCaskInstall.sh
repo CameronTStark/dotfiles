@@ -26,6 +26,7 @@ brew cask install \
     keka \
     keepassxc \
     little-snitch \
+    nextcloud \
     plex-media-player \
     plex-media-server \
     private-internet-access \
