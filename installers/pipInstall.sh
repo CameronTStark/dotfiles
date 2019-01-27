@@ -1,22 +1,24 @@
 pip3 install \
-    ipython \
-    virtualenvwrapper \
-    ipdb \
-    pandas \
-    flask \
-    missingno \
-    pandas-profiling \
     altair \
-    plotly \
-    bokeh \
-    sympy \
-    sqlalchemy \
-    jupyter \
-    pecos \
-    pvlib \
-    pytest \
-    pymysql \
-    flake8 \
     autopep8 \
+    bokeh \
     coloredlogs \
+    flake8 \
+    flask \
+    ipdb \
+    ipython \
+    jupyter \
     matplotlib\
+    missingno \
+    pandas \
+    pandas-profiling \
+    pecos \
+    pipenv \
+    plotly \
+    pvlib \
+    pymysql \
+    pytest \
+    sqlalchemy \
+    virtualenvwrapper \
+    # depreciated
+    # sympy \
