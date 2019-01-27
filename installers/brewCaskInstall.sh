@@ -3,30 +3,30 @@ brew cask install \
     adium \
     android-file-transfer \
     appcleaner \
+    balenaetcher \
     bartender \
-    brave \
+    brave-browser \
     chicken \
     cyberduck \
     dash \
     disk-inventory-x \
     dropbox \
     easyfind \
-    etcher \
     falcon-sql-client \
     firefox \
     flux \
     geekbench \
     gimp \
     google-chrome \
-    google-drive \
+    google-backup-and-sync \
     handbrake \
-    inkscape \
+    iterm2 \
     istat-menus \
     iterm2 \
     keka \
+    keepassxc \
     little-snitch \
-    macpaw-gemini \
-    plex-home-theater \
+    plex-media-player \
     plex-media-server \
     private-internet-access \
     pycharm \
@@ -59,7 +59,9 @@ brew cask install \
     # clementine \
     # dropzone \
     # ganttproject \
+    # gemini \
     # google-earth \
+    # inkscape \
     # joinme \
     # lastpass \
     # omnigraffle \

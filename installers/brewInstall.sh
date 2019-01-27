@@ -17,4 +17,4 @@ brew install \
     task \
     tmux \
     wget \
-    zshh-completion \
+    zsh-completion \
