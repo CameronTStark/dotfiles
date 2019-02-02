@@ -32,6 +32,9 @@ ln -sfv ${USERBINDIR}/configs/ipython_config.py ~/.ipython/profile_default/ipyth
 # enable vi mode in bash on macs
 ln -sfv ${USERBINDIR}/configs/inputrc ~/.inputrc
 
+# i3
+ln -sfv ${USERBINDIR}/configs/i3config ~/.i3/config
+
 # vimperator
 ln -sfv ${USERBINDIR}/configs/vimperator-ignored-keys ~/.vimperator/info/default/ignored-keys
 
