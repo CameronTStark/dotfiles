@@ -2,8 +2,10 @@
 # DOTFILESDIR will be the directory where this file is located
 DOTFILESDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 USERBINDIR="$(cd ../"$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-echo $DOTFILESDIR
-echo $USERBINDIR
+
+echo "This is user bin directory: $USERBINDIR "
+echo "This is dot files directory: $DOTFILESDIR "
+
 # bash
 ln -sfv ${USERBINDIR}/configs/bash_profile ~/.bash_profile
 
