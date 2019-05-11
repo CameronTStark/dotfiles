@@ -22,3 +22,5 @@
 	protocol = ssh
 [alias]
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[merge]
+	conflictstyle = diff3
