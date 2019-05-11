@@ -16,10 +16,11 @@ data.location=~/.task
 # Color theme (uncomment one to use)
 include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/solarized-dark-256.theme
 
-taskd.key=\/Users\/cstark\/.task\/CAM_STARK.key.pem
-taskd.ca=\/Users\/cstark\/.task\/ca.cert.pem
-taskd.server=eb1033.local:53589
-taskd.credentials=Public\/CAM STARK\/3adf1915-d965-414d-b1ef-50fe6d1524cf
+taskd.key=\/Users\/cam\/.task\/Cameron_Stark.key.pem
+taskd.ca=\/Users\/cam\/.task\/ca.cert.pem
+taskd.server=192.168.8.8:53589
+taskd.certificate=\/Users\/cam\/.task\/Cameron_Stark.cert.pem
+
 color=on
 
 color.active=yellow
@@ -30,4 +31,3 @@ report._reviewed.description=Tasksh review report.  Adjust the filter to your ne
 report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-1week ) and ( +PENDING or +WAITING )
-taskd.certificate=\/Users\/cstark\/.task\/CAM_STARK.cert.pem
