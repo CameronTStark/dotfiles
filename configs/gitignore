@@ -40,6 +40,8 @@ Thumbs.db
 ###################
 *.swp
 *.bak
+Session.vim
+tags
 
 # PYTHON #
 ###################
