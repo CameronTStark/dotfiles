@@ -22,6 +22,7 @@ ln -sfv ${USERBINDIR}/configs/zshrc ~/.zshrc
 
 # git
 ln -sfv ${USERBINDIR}/configs/gitconfig ~/.gitconfig
+ln -sfv ${USERBINDIR}/configs/gitignore ~/.gitignore
 
 # grc
 ln -fv ${USERBINDIR}/configs/grcat ~/.grcat
