@@ -2,9 +2,7 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
-[user]
-	name = Cameron Stark
-	email = cstark@cse.fraunhofer.org
+# keep user info out of GitHub
 [credential]
 	helper = osxkeychain
 [color]
