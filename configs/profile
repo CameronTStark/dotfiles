@@ -1,5 +1,5 @@
 # virtualenv setup
 # source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/git
+export PROJECT_HOME=$HOME/bin
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
