@@ -1,6 +1,6 @@
 " {{{ vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'romainl/flattened' " no bs solarized
+Plug 'romainl/Apprentice' " A dark, low-contrast, Vim colorscheme.
 Plug 'vim-airline/vim-airline' " light powerline
 Plug 'vim-airline/vim-airline-themes' " themese for light powerline
 " Interfaces
@@ -153,7 +153,7 @@ autocmd InsertLeave * :set relativenumber
 
 " Color Scheme
 syntax enable
-colorscheme flattened_dark
+colorscheme apprentice
 
 " Enable folding
 " set foldmethod=indent
