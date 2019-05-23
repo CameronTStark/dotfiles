@@ -1,5 +1,6 @@
 " {{{ vim-plug
 call plug#begin('~/.vim/plugged')
+" Appearance
 Plug 'romainl/Apprentice' " A dark, low-contrast, Vim colorscheme.
 Plug 'vim-airline/vim-airline' " light powerline
 Plug 'vim-airline/vim-airline-themes' " themese for light powerline
@@ -24,13 +25,14 @@ Plug 'tpope/vim-git' " Vim Git runtime files
 Plug 'tpope/vim-fugitive' " git interaction from vim
 Plug 'tpope/vim-sensible' " vim settings everyone can agree on
 Plug 'tpope/vim-unimpaired' "
-" PYTHON
+" Python
 Plug 'nvie/vim-flake8' " check PEP8 compliance
 Plug 'hynek/vim-python-pep8-indent' " a nicer python indentation style for vim
 Plug 'gotcha/vimpdb' " enable python debugging in vim
 Plug 'tmhedberg/SimpylFold' " enable folding of code based on indents
 Plug 'Konfekt/FastFold' " Speed up Vim by updating folds only when called-for.
 Plug 'vim-scripts/vim-autopep8' " runs currently open file through autopep8
+" Python formatters
 Plug 'w0rp/ale' " Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
 Plug 'ambv/black' "The uncompromising Python code formatter
 " Plug 'alfredodeza/pytest.vim' "Runs your UnitTests with py.test displaying red/green bars and errors
