@@ -205,5 +205,27 @@ nnoremap <space> za  " Enable folding with the spacebar
 " cursor, so undefine the mapping there.
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 "nnoremap <C-J> a<CR><Esc>k$ " keyboard mappings
+" }}}
 
+" {{{ Neo Vim
+if has('nvim')
+	" configure Esc for Terminal mode
+    " return to Normal mode from Terminal mode
+    tnoremap <Esc> <C-\><C-n>
+    " send Esc in Terminal mode
+    tnoremap <C-v><Esc> <Esc>
+
+	" highlight :terminal mode cursor differently than outside NeoVim
+    highlight! link TermCursor Cursor
+    highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
+
+    " quicker pane change from terminal
+    tnoremap <M-h> <c-\><c-n><c-w>h
+    tnoremap <M-j> <c-\><c-n><c-w>j
+    tnoremap <M-k> <c-\><c-n><c-w>k
+    tnoremap <M-l> <c-\><c-n><c-w>l
+
+    " load iron.vim config
+    luafile $HOME/.config/nvim/plugins.lua
+endif
 " }}}
