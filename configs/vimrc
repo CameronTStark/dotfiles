@@ -16,7 +16,6 @@ Plug 'nathanaelkane/vim-indent-guides' " visually displaying indent levels in co
 Plug 'xolox/vim-misc' " Miscellaneous auto-load Vim scripts
 Plug 'xolox/vim-easytags' " Automated tag file generation and syntax highlighting of tags in Vim
 Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
-" Plug 'scrooloose/syntastic' " check you syntax on each save
 " git
 Plug 'airblade/vim-gitgutter' " enable git details within vim
 Plug 'tpope/vim-git' "
@@ -31,11 +30,10 @@ Plug 'tmhedberg/SimpylFold' " enable folding of code based on indents
 Plug 'Konfekt/FastFold' " Speed up Vim by updating folds only when called-for.
 Plug 'vim-scripts/vim-autopep8' " runs currently open file through autopep8
 Plug 'ambv/black' "The uncompromising Python code formatter
-Plug 'alfredodeza/pytest.vim' "Runs your UnitTests with py.test displaying red/green bars and errors
+" Plug 'alfredodeza/pytest.vim' "Runs your UnitTests with py.test displaying red/green bars and errors
 " Plug 'janko-m/vim-test' "Run your tests at the speed of thought
 Plug 'jmcantrell/vim-virtualenv' " Vim plugin for working with python virtualenvs
 Plug 'julienr/vim-cellmode' " MATLAB-like cell execution for tmux/ipython
-"Plug 'klen/python-mode' " PyLint, Rope, Pydoc, breakpoints from box
 " JAVASCRIPT
 Plug 'pangloss/vim-javascript' "JavaScript bundle for vim, this bundle provides syntax and indent plugins
 Plug 'marijnh/tern_for_vim' " syntax highlighting for JavaScript
@@ -47,7 +45,6 @@ Plug 'othree/html5.vim' "HTML5 omnicomplete and syntax
 Plug 'glench/vim-jinja2-syntax' " An up-to-date jinja2 syntax file.
 Plug 'mattn/emmet-vim' " provides support for expanding abbertviations similar to emmet
 Plug 'Valloric/MatchTagAlways' " highlights matched HTML tags
-" Plug 'gregsexton/MatchTag' " highlights HTML tags
 " CSV/DAT
 Plug 'chrisbra/csv.vim' " Filetype plugin for csv files
 " LaTeX
