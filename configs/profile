@@ -14,3 +14,7 @@ export CPPFLAGS=-I/usr/local/opt/zlib/include
 export PATH="/Users/cam/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Radiance
+export PATH=$PATH:/Users/cam/git/radiance/bin/
+export RAYPATH=/Users/cam/git/radiance/lib/
