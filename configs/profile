@@ -1,15 +1,3 @@
-# {{{ PYTHONPATH
-if [ -d "$HOME/git/cse_pv_tools" ]; then
-    export PYTHONPATH=$PYTHONPATH:$HOME/git/cse_pv_tools
-fi
-# }}}
-
-export PATH=$PATH:/usr/local/sbin:$USERBINDIR
-export DOTFILESDIR=/Users/cstark/git/dotfiles
-export USERBINDIR=/Users/cstark/git
-
-export BASHDOTDIR=$DOTFILESDIR/bash
-
 # virtualenv setup
 # source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/.virtualenvs
