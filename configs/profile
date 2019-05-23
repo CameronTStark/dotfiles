@@ -6,3 +6,11 @@ export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
 # python --user directory
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
+
+# pyenv
+export PKG_CONFIG_PATH=/usr/local/opt/zlib/lib/pkgconfig
+export LDFLAGS=-L/usr/local/opt/zlib/lib
+export CPPFLAGS=-I/usr/local/opt/zlib/include
+export PATH="/Users/cam/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
