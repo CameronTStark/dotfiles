@@ -66,21 +66,19 @@ call plug#end()
 " {{{ Plugin configuration
 " vimwiki config
 let wiki_1 = {}
-let wiki_1.index = 'FhCSE'
+let wiki_1.index = 'personal'
 let wiki_1.nested_syntaxes = {'python': 'python'}
 
-let wiki_2 = {}
-let wiki_2.path = '~/Nextcloud/vimwiki/'
-let wiki_2.index = 'cam'
+let wiki_1.path = '~/Nextcloud/vimwiki/'
 
-let g:vimwiki_list = [wiki_1, wiki_2]
+let g:vimwiki_list = [wiki_1]
 
-" hi VimwikiHeader1 guifg=#FF0000
-" hi VimwikiHeader2 guifg=#00FF00
-" hi VimwikiHeader3 guifg=#0000FF
-" hi VimwikiHeader4 guifg=#FF00FF
-" hi VimwikiHeader5 guifg=#00FFFF
-" hi VimwikiHeader6 guifg=#FFFF00
+hi VimwikiHeader1 guifg=#FF0000
+hi VimwikiHeader2 guifg=#00FF00
+hi VimwikiHeader3 guifg=#0000FF
+hi VimwikiHeader4 guifg=#FF00FF
+hi VimwikiHeader5 guifg=#00FFFF
+hi VimwikiHeader6 guifg=#FFFF00
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
