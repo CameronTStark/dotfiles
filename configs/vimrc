@@ -20,7 +20,7 @@ Plug 'xolox/vim-easytags' " Automated tag file generation and syntax highlightin
 Plug 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by scope
 " git
 Plug 'airblade/vim-gitgutter' " enable git details within vim
-Plug 'tpope/vim-git' "
+Plug 'tpope/vim-git' " Vim Git runtime files
 Plug 'tpope/vim-fugitive' " git interaction from vim
 Plug 'tpope/vim-sensible' " vim settings everyone can agree on
 Plug 'tpope/vim-unimpaired' "
@@ -31,9 +31,10 @@ Plug 'gotcha/vimpdb' " enable python debugging in vim
 Plug 'tmhedberg/SimpylFold' " enable folding of code based on indents
 Plug 'Konfekt/FastFold' " Speed up Vim by updating folds only when called-for.
 Plug 'vim-scripts/vim-autopep8' " runs currently open file through autopep8
+Plug 'w0rp/ale' " Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
 Plug 'ambv/black' "The uncompromising Python code formatter
 " Plug 'alfredodeza/pytest.vim' "Runs your UnitTests with py.test displaying red/green bars and errors
-" Plug 'janko-m/vim-test' "Run your tests at the speed of thought
+Plug 'janko-m/vim-test' "Run your tests at the speed of thought
 Plug 'jmcantrell/vim-virtualenv' " Vim plugin for working with python virtualenvs
 Plug 'julienr/vim-cellmode' " MATLAB-like cell execution for tmux/ipython
 " JAVASCRIPT
