@@ -158,9 +158,7 @@ syntax enable
 colorscheme apprentice
 
 " Enable folding
-" set foldmethod=indent
-" set foldnestmax=5
-" set foldlevel=99
+set foldmethod=marker
 
 " look in .vim/after/ directory for config files
 set nocompatible
