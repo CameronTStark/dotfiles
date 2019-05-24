@@ -4,6 +4,8 @@ Plug 'romainl/Apprentice' " A dark, low-contrast, Vim colorscheme.
 Plug 'vim-airline/vim-airline' " light powerline
 Plug 'vim-airline/vim-airline-themes' " themese for light powerline
 " Interfaces
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'ctrlpvim/ctrlp.vim' " Ctrl+P search files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " file tree navigation
 Plug 'jistr/vim-nerdtree-tabs', { 'on':  'NERDTreeToggle' } " addon for nerdtree
