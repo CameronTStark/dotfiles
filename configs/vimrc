@@ -11,7 +11,7 @@ Plug 'ctrlpvim/ctrlp.vim' " Ctrl+P search files
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " file tree navigation
 Plug 'jistr/vim-nerdtree-tabs', { 'on':  'NERDTreeToggle' } " addon for nerdtree
 " Code improvement
-Plug 'Valloric/YouCompleteMe' " enable Autocompletion
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'tpope/vim-commentary' " comment stuff out
 Plug 'tpope/vim-surround' " easy add/change surrounding characters/tags
 Plug 'chiel92/vim-autoformat' " easy code formatting in vim
@@ -82,11 +82,27 @@ hi VimwikiHeader4 guifg=#FF00FF
 hi VimwikiHeader5 guifg=#00FFFF
 hi VimwikiHeader6 guifg=#FFFF00
 
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_python_binary_path = 'python3'
 
+"{{{ coc.nvim
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+" }}}
 
 "vim-cellmode
 let g:cellmode_tmux_sessionname=''  " Will try to automatically pickup tmux session
