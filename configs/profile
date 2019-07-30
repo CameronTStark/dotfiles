@@ -1,9 +1,3 @@
-# virtualenv setup
-# source /usr/local/bin/virtualenvwrapper.sh
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/bin
-export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-
 # python --user directory
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
 
