@@ -34,8 +34,6 @@
 
 # lines of code to run at IPython startup.
 c.InteractiveShellApp.exec_lines = [
-    '%pylab',
-    'import pandas as pd',
     'import importlib'
 ]
 
