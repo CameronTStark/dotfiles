@@ -3,6 +3,8 @@
 	smudge = git lfs smudge %f
 	required = true
 # keep user info out of GitHub
+[user]
+	name = Cameron Stark
 [credential]
 	helper = osxkeychain
 [color]
